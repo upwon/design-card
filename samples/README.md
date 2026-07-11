@@ -115,6 +115,9 @@ bun samples/build.ts
 for f in samples/*.html; do
   bun scripts/screenshot.ts "$f" "${f%.html}.png" 1080 1080
 done
+
+# 3.（可选）重建主 README 顶部的 8 宫格总览图
+bun scripts/screenshot.ts samples/_montage.html assets/theme-overview.png 2200 --full-page
 ```
 
 样例卡只用系统字体（Georgia + system-ui），不依赖本地字体绝对路径，clone 后直接可打开 `.html` 预览。

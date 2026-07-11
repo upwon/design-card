@@ -21,7 +21,9 @@
 
 **内置主题**：`claude`（陶土·默认）· `newsroom`（报刊红）· `indigo`（靛蓝）· `forest`（森林墨）· `kraft`（牛皮纸）· `dune`（沙丘）· `midnight`（深色·橙）· `blueprint`（深色·蓝图）。
 
-👉 **[主题预览画廊 →](samples/)**（8 套主题各一张样例卡，HTML + PNG，方便挑选）
+<img src="assets/theme-overview.png" alt="design-card 8 套主题总览 — claude/newsroom/indigo/forest/kraft/dune/midnight/blueprint" width="100%">
+
+👉 **[主题预览画廊 →](samples/)**（8 套主题各一张大图样例卡 + 调色板 hex，方便挑选）
 
 ```
 输入：一段文字 / URL / 数据（+ 可选主题名）
