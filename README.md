@@ -205,6 +205,8 @@ bun scripts/screenshot.ts /tmp/my-card.html
 | | |
 |:---|:---|
 | 维护者 | [@upwon](https://github.com/upwon) |
+| Twitter | [@lifeee07296438](https://x.com/lifeee07296438) |
+| 公众号 | 微信搜「热夏summer」 |
 | 原项目 | [geekjourneyx/claude-design-card](https://github.com/geekjourneyx/claude-design-card) |
 
 本仓库 fork 自 **geekjourneyx** 的 [claude-design-card](https://github.com/geekjourneyx/claude-design-card)，在其排版系统之上新增了 8 套主题配色。感谢原作者奠定的设计基础。
