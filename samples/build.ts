@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
 /**
- * 主题样例生成器 — 为 8 套主题各生成一张 1080×1080 预览卡（HTML）。
+ * 主题样例生成器 — 为全部主题各生成一张 1080×1080 预览卡（HTML）。
  * 模板完全一致，只替换 :root token 块，直观展示「换主题只改一段 :root」。
  * 生成后用 scripts/screenshot.ts 逐张截图为 PNG。
  *
@@ -38,6 +38,18 @@ const THEMES: Theme[] = [
     root: '--pg:#1a1714;--iv:#231f1a;--nk:#f5f0e5;--ds:#0d0b09;--tc:#ff4a2b;--og:#ece4d2;--sg:#7a7972;--bc:#2f2a25;--bw:#3a342d;--ws:#ece4d2;' },
   { id: 'blueprint', nameZh: '蓝图', mood: '深海军底 + 电光青 · 技术 · 数据', dark: true,
     root: '--pg:#0e1a2e;--iv:#142441;--nk:#d6e5ff;--ds:#0a1224;--tc:#4dd2ff;--og:#a8c2f0;--sg:#6c89b8;--bc:#1c2f54;--bw:#274069;--ws:#d6e5ff;' },
+  { id: 'figma', nameZh: 'Figma', mood: '白画布 + 洋红 + 深紫块 · 设计 · 产品（灵感来自 Figma）', dark: false,
+    root: '--pg:#f7f7f5;--iv:#ffffff;--nk:#000000;--ds:#1f1d3d;--tc:#ff3d8b;--og:#55555e;--sg:#8a8a90;--bc:#f1f1f1;--bw:#e6e6e6;--ws:#f7f7f5;' },
+  { id: 'apple', nameZh: '晨灰', mood: '冷调极简 + Action Blue · 产品 · 科技（灵感来自 Apple）', dark: false,
+    root: '--pg:#f5f5f7;--iv:#ffffff;--nk:#1d1d1f;--ds:#1d1d1f;--tc:#0066cc;--og:#6e6e73;--sg:#86868b;--bc:#f0f0f2;--bw:#e0e0e0;--ws:#f5f5f7;' },
+  { id: 'notion', nameZh: '素笺', mood: '暖极简 + 靛紫 · 效率 · 文档（灵感来自 Notion）', dark: false,
+    root: '--pg:#fafaf9;--iv:#ffffff;--nk:#1a1a1a;--ds:#2a2825;--tc:#5645d4;--og:#5a5852;--sg:#a4a097;--bc:#ede9e4;--bw:#e5e3df;--ws:#fafaf9;' },
+  { id: 'vercel', nameZh: '纯黑', mood: '纯黑 + 电光蓝 · 开发 · 部署（灵感来自 Vercel）', dark: true,
+    root: '--pg:#0a0a0a;--iv:#171717;--nk:#fafafa;--ds:#1c1c1c;--tc:#0070f3;--og:#a1a1a1;--sg:#707070;--bc:#262626;--bw:#333333;--ws:#ededed;' },
+  { id: 'linear', nameZh: '靛紫', mood: '近黑 + 靛紫 · 工具 · 极简（灵感来自 Linear）', dark: true,
+    root: '--pg:#08090a;--iv:#141516;--nk:#f7f8f8;--ds:#1a1c24;--tc:#5e6ad2;--og:#b4b8c4;--sg:#6f7280;--bc:#1f2023;--bw:#2b2d31;--ws:#eceef2;' },
+  { id: 'spotify', nameZh: '霓绿', mood: '深灰 + 霓虹绿 · 音乐 · 传播（灵感来自 Spotify）', dark: true,
+    root: '--pg:#121212;--iv:#1f1f1f;--nk:#ffffff;--ds:#282828;--tc:#1ed760;--og:#b3b3b3;--sg:#7c7c7c;--bc:#2a2a2a;--bw:#383838;--ws:#eeeeee;' },
 ];
 
 // 展示的 4 个关键 token（名 + hex 从 root 里解析）

@@ -2,7 +2,7 @@
 name: design-card
 description: |
   将任意文本、网页或 URL 生成符合 Claude/Anthropic 设计语言的 HTML 信息卡片，通过 Playwright 截图为 PNG。
-  内置 8 套可选主题配色（claude 陶土、newsroom 报刊红、indigo 靛蓝、forest 森林墨、kraft 牛皮纸、dune 沙丘、midnight 深色、blueprint 蓝图）——用同一套排版结构换主题色，不再只有一个陶土色。
+  内置 14 套可选主题配色（8 套原生 + figma/apple/notion/vercel/linear/spotify 品牌灵感）——用同一套排版结构换主题色，不再只有一个陶土色。
   支持 14 种格式：平台封面（公众号、视频号、B站、抖音）、图文内容卡（小红书、教程、对比分析）、
   社交分享卡（金句、数据、方形）、长文编辑排版（Broadsheet、Feature、Reader、Digest）。
   当用户提到「信息卡、卡片、封面、图文笔记、排版、截图、生成图、内容卡、换主题色、配色」时使用本技能。
@@ -13,7 +13,7 @@ description: |
 将内容转成符合 Claude/Anthropic 设计语言的 HTML 卡片，并通过 Playwright 截图为 PNG。
 核心目标：用统一的设计系统让每种格式都有专属的排版气质，而不是换色皮肤。
 
-**相较 claude-design-card 的升级**：颜色抽象成 10 个语义 token，可在 **8 套内置主题**间切换
+**相较 claude-design-card 的升级**：颜色抽象成 10 个语义 token，可在 **14 套内置主题**间切换
 （详见 [`references/THEMES.md`](references/THEMES.md)）。排版结构、字体纪律、SVG 系统全部不变，只有配色随主题流动。
 
 ## 设计语言与主题 Token
@@ -172,7 +172,7 @@ box-shadow: rgba(0,0,0,0.08) 0 4px 24px;
 3. 问最多 3 个会改变结果的关键问题（优先 1-2 个）：
    - 目标平台（微信 / 小红书 / B站 / 通用）
    - 希望阅读型还是传播型
-   - 主题配色（列出 8 套主题名，或问是否有品牌色 → 覆盖 `--tc`）
+   - 主题配色（列出 14 套主题名，或问是否有品牌色 → 覆盖 `--tc`）
 4. 用户确认后，进入 HTML 生成。
 5. 如果用户说「按你判断」或场景已足够明确，直接生成（主题未指定则用 `claude`）。
 
