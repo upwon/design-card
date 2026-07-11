@@ -546,13 +546,13 @@ Feature 风格，需要头图区域？
 ### Step 5：保存 HTML 并通知用户
 
 \`\`\`
-默认路径：/tmp/claude-card-[关键词].html
+默认路径：/tmp/design-card-[关键词].html
 \`\`\`
 
 **保存后必须输出预览提示，然后等用户确认：**
 
 \`\`\`
-✅ HTML 已生成：/tmp/claude-card-[关键词].html
+✅ HTML 已生成：/tmp/design-card-[关键词].html
 可在浏览器中打开预览。确认布局 OK 后回复「截图」，我立即生成 PNG。
 如需调整（字号 / 配色 / 内容），现在告诉我。
 \`\`\`
@@ -563,19 +563,19 @@ Feature 风格，需要头图区域？
 
 \`\`\`bash
 # 固定尺寸格式（封面类、分享卡类）：
-bun scripts/screenshot.ts /tmp/claude-card-[关键词].html [output.png] [width] [height]
+bun scripts/screenshot.ts /tmp/design-card-[关键词].html [output.png] [width] [height]
 
 # 长文编辑排版（自动高度）：
-bun scripts/screenshot.ts /tmp/claude-card-[关键词].html [output.png] [width] --full-page
+bun scripts/screenshot.ts /tmp/design-card-[关键词].html [output.png] [width] --full-page
 
 # 附带二维码（QR_URL 非空时，在命令末尾追加）：
-bun scripts/screenshot.ts /tmp/claude-card-[关键词].html [output.png] [width] [height] --url [QR_URL]
-bun scripts/screenshot.ts /tmp/claude-card-[关键词].html [output.png] [width] --full-page --url [QR_URL]
+bun scripts/screenshot.ts /tmp/design-card-[关键词].html [output.png] [width] [height] --url [QR_URL]
+bun scripts/screenshot.ts /tmp/design-card-[关键词].html [output.png] [width] --full-page --url [QR_URL]
 
 # 脚本内部已设置 waitForTimeout(3000)，确保 SVG 动画在截图前完成
 \`\`\`
 
-默认输出：\`/tmp/claude-card-[关键词].png\`
+默认输出：\`/tmp/design-card-[关键词].png\`
 
 ---
 

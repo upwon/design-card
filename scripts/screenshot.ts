@@ -24,7 +24,7 @@ if (cleanArgs.length === 0) {
     '  bun scripts/screenshot.ts <input.html> [output.png] [width] --full-page',
     '',
     'Examples:',
-    '  bun scripts/screenshot.ts card.html                              # → /tmp/claude-card-card.png, 1080×1080',
+    '  bun scripts/screenshot.ts card.html                              # → /tmp/design-card-card.png, 1080×1080',
     '  bun scripts/screenshot.ts card.html out.png 1280 720             # fixed size',
     '  bun scripts/screenshot.ts longform.html out.png 800 --full-page  # auto-height',
     '  bun scripts/screenshot.ts card.html out.png 760 --full-page --url https://example.com  # with QR',
@@ -42,7 +42,7 @@ const stem = basename(inputHtml, extname(inputHtml));
 if (cleanArgs[1] && !cleanArgs[1].startsWith('--') && isNaN(Number(cleanArgs[1]))) {
   outputPng = cleanArgs[1];
 } else {
-  outputPng = `/tmp/claude-card-${stem}.png`;
+  outputPng = `/tmp/design-card-${stem}.png`;
 }
 
 // Parse width, height/--full-page
