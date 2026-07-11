@@ -1,0 +1,85 @@
+<!-- design-card figure · claude theme -->
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><style>
+:root{--pg:#f5f4ed;--iv:#faf9f5;--nk:#141413;--ds:#30302e;--tc:#c96442;--og:#5e5d59;--sg:#87867f;--bc:#f0eee6;--bw:#e8e6dc;--ws:#b0aea5;}
+*{margin:0;box-sizing:border-box}
+.fig{width:1840px;background:var(--pg);color:var(--nk);
+  font-family:-apple-system,system-ui,"PingFang SC",sans-serif;padding:72px 76px}
+.kicker{font-size:19px;letter-spacing:3px;text-transform:uppercase;color:var(--sg)}
+.title{font-family:Georgia,serif;font-weight:500;font-size:56px;letter-spacing:-1px;margin-top:16px}
+.title em{font-style:normal;color:var(--tc)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.card{background:var(--iv);border-radius:12px;box-shadow:0 0 0 1px rgba(0,0,0,.06);padding:38px 36px}
+.ic{width:52px;height:52px;display:block}
+.ft{font-family:Georgia,serif;font-weight:500;font-size:29px;margin-top:26px}
+.fd{font-size:20px;line-height:1.55;color:var(--og);margin-top:12px}
+.foot{font-size:18px;color:var(--sg);margin-top:52px}
+.foot b{color:var(--tc);font-family:Georgia,serif;font-weight:500}
+</style></head><body>
+<div class="fig">
+  <div class="kicker">design-card · features</div>
+  <div class="title">不是换色皮肤，是<em>一套系统</em></div>
+  <div class="grid">
+
+    <div class="card">
+      <svg class="ic" viewBox="0 0 52 52" fill="none" aria-hidden="true">
+        <rect x="4" y="4" width="19" height="19" rx="2" fill="var(--nk)"/>
+        <rect x="29" y="4" width="19" height="19" rx="2" fill="var(--tc)"/>
+        <rect x="4" y="29" width="19" height="19" rx="2" fill="var(--sg)"/>
+        <rect x="29" y="29" width="19" height="19" rx="2" fill="none" stroke="var(--nk)" stroke-width="2"/>
+      </svg>
+      <div class="ft">14 格式 · 4 大族</div>
+      <div class="fd">平台封面 / 内容卡 / 分享卡 / 长文排版，每种有专属排版结构，不是「换尺寸」。</div>
+    </div>
+
+    <div class="card">
+      <svg class="ic" viewBox="0 0 52 52" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="15" fill="var(--tc)" opacity="0.9"/>
+        <circle cx="33" cy="26" r="15" fill="var(--nk)" opacity="0.85"/>
+        <circle cx="24" cy="34" r="12" fill="var(--sg)" opacity="0.9"/>
+      </svg>
+      <div class="ft">8 套主题</div>
+      <div class="fd">颜色抽象成 10 个语义 token，换主题只改 <code>:root</code> 一段；可只覆盖 <code>--tc</code> 接品牌色。</div>
+    </div>
+
+    <div class="card">
+      <svg class="ic" viewBox="0 0 52 52" fill="none" aria-hidden="true">
+        <polyline points="4,40 18,24 30,32 48,10" fill="none" stroke="var(--tc)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="18" cy="24" r="4" fill="var(--nk)"/>
+        <circle cx="30" cy="32" r="4" fill="var(--nk)"/>
+      </svg>
+      <div class="ft">印刷级 SVG</div>
+      <div class="fd">版刻装饰线、大号引言符、编辑插图、数据可视化——仅在 CSS 做不到时才用，全走主题 token。</div>
+    </div>
+
+    <div class="card">
+      <svg class="ic" viewBox="0 0 52 52" fill="none" aria-hidden="true">
+        <circle cx="26" cy="26" r="22" fill="none" stroke="var(--nk)" stroke-width="2.5"/>
+        <polyline points="15,27 23,35 38,17" fill="none" stroke="var(--tc)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="ft">内容忠实</div>
+      <div class="fd">只提炼原文里的判断、数字、金句，不为排版好看而编造；数字量纲不混淆。</div>
+    </div>
+
+    <div class="card">
+      <svg class="ic" viewBox="0 0 52 52" fill="none" aria-hidden="true">
+        <rect x="6" y="10" width="40" height="34" rx="3" fill="none" stroke="var(--nk)" stroke-width="2.5"/>
+        <path d="M6 20 H46" stroke="var(--nk)" stroke-width="2.5"/>
+        <rect x="12" y="27" width="16" height="4" rx="2" fill="var(--tc)"/>
+      </svg>
+      <div class="ft">完全自包含</div>
+      <div class="fd">生成的 HTML 内联全部样式，无外部 CDN 依赖，可离线打开与截图。</div>
+    </div>
+
+    <div class="card">
+      <svg class="ic" viewBox="0 0 52 52" fill="none" aria-hidden="true">
+        <path d="M8 10 h36 a3 3 0 0 1 3 3 v20 a3 3 0 0 1 -3 3 H22 l-9 8 v-8 H8 a3 3 0 0 1 -3 -3 V13 a3 3 0 0 1 3 -3 z" fill="none" stroke="var(--nk)" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M13 19 H39 M13 27 H31" stroke="var(--tc)" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <div class="ft">自然语言触发</div>
+      <div class="fd">装成 Claude Code Skill 后，一句话描述即可生成；可选自动生成扫码二维码。</div>
+    </div>
+
+  </div>
+  <div class="foot">统一的 <b>Claude 设计语言</b> 让 14 格式 × 8 主题共享同一套审美标准</div>
+</div>
+</body></html>
