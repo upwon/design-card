@@ -21,6 +21,8 @@
 
 **内置主题**：`claude`（陶土·默认）· `newsroom`（报刊红）· `indigo`（靛蓝）· `forest`（森林墨）· `kraft`（牛皮纸）· `dune`（沙丘）· `midnight`（深色·橙）· `blueprint`（深色·蓝图）。
 
+👉 **[主题预览画廊 →](samples/)**（8 套主题各一张样例卡，HTML + PNG，方便挑选）
+
 ```
 输入：一段文字 / URL / 数据（+ 可选主题名）
 输出：/tmp/design-card-*.png（像素精准的设计卡片）
@@ -56,8 +58,10 @@
 **作为 AI Skill（推荐）：**
 
 ```bash
-npx skills add https://github.com/geekjourneyx/claude-design-card
+npx skills add https://github.com/upwon/design-card
 ```
+
+> 本仓库是 [geekjourneyx/claude-design-card](https://github.com/geekjourneyx/claude-design-card) 的 fork，新增了 8 套主题配色系统。
 
 **本地开发：**
 
@@ -140,19 +144,21 @@ bun scripts/screenshot.ts /tmp/my-card.html
 
 ## 设计系统
 
-所有卡片使用统一的 Claude 设计 Token，详见 [DESIGN.md](DESIGN.md) 和 [references/design-spec.md](references/design-spec.md)。
+所有卡片颜色抽象成 **10 个语义 Token**，取值来自选中的**主题**（见 [主题预览](samples/) 与 [references/THEMES.md](references/THEMES.md)）。换主题只替换 `:root` 一段，正文样式零改动。下表为默认主题 `claude` 的取值：
 
-| Token | 色值 | 用途 |
+| Token | 语义 | claude 默认值 |
 |---|---|---|
-| `--pg` Parchment | `#f5f4ed` | 主背景 |
-| `--iv` Ivory | `#faf9f5` | 卡面/次背景 |
-| `--nk` Near-Black | `#141413` | 正文、标题 |
-| `--tc` Terracotta | `#c96442` | 强调、装饰 |
-| `--ds` Dark-Surface | `#30302e` | 深色区块 |
-| `--og` Olive-Gray | `#5e5d59` | 副文本 |
-| `--sg` Stone-Gray | `#87867f` | 元信息 |
+| `--pg` | 主背景 | `#f5f4ed` |
+| `--iv` | 卡面/次背景 | `#faf9f5` |
+| `--nk` | 正文、标题（墨色，亮/暗随主题） | `#141413` |
+| `--ds` | 深色区块（**永远深色**） | `#30302e` |
+| `--ws` | `--ds` 上的文字（**永远浅色**） | `#b0aea5` |
+| `--tc` | 强调、装饰 | `#c96442` |
+| `--og` | 副文本 | `#5e5d59` |
+| `--sg` | 元信息 | `#87867f` |
 
-字体：Georgia（衬线，标题/正文）+ system-ui（UI/标签）。禁止冷色调蓝灰、纯白 `#ffffff`、`font-weight: 700`。
+`--ds` 恒深 + `--ws` 恒浅 → 深色头部构图在每套主题（含深色主题）都成立。
+字体：Georgia（衬线，标题/正文）+ system-ui（UI/标签）。颜色一律走 `var(--x)`，不写死 hex、不用纯白 `#ffffff`、不用 `font-weight: 700`。
 
 新增 A/B 族社交设计原则：
 
@@ -169,9 +175,9 @@ bun scripts/screenshot.ts /tmp/my-card.html
 
 ```
 帮我把这篇文章做成小红书图文笔记卡片
-把这个数据做成方形分享卡
-帮我生成一张公众号首图封面
-把这篇长文做成 The Broadsheet 编辑排版
+把这个数据做成方形分享卡，用 blueprint 主题
+帮我生成一张公众号首图封面，森林墨风格
+把这篇长文做成 The Broadsheet 编辑排版，newsroom 报刊主题
 ```
 
 技能自动完成：分析内容 → 选择格式 → 提炼关键信息（不编造）→ 生成 HTML → 截图输出至 `/tmp/`。

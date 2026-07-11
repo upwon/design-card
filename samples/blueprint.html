@@ -1,0 +1,58 @@
+<!-- theme: blueprint -->
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><style>
+:root{--pg:#0e1a2e;--iv:#142441;--nk:#d6e5ff;--ds:#0a1224;--tc:#4dd2ff;--og:#a8c2f0;--sg:#6c89b8;--bc:#1c2f54;--bw:#274069;--ws:#d6e5ff;}
+*{margin:0;box-sizing:border-box}
+.card{width:1080px;height:1080px;background:var(--pg);color:var(--nk);
+  font-family:-apple-system,system-ui,"PingFang SC","Microsoft YaHei",sans-serif;
+  padding:88px 84px;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;align-items:baseline}
+.kicker{font-size:19px;letter-spacing:3px;text-transform:uppercase;color:var(--sg)}
+.idx{font-size:19px;letter-spacing:2px;color:var(--sg);font-variant-numeric:tabular-nums}
+.name{font-family:Georgia,"Times New Roman",serif;font-weight:500;
+  font-size:150px;line-height:1.0;letter-spacing:-2px;margin-top:40px}
+.name em{font-style:normal;color:var(--tc)}
+.id{font-family:Georgia,serif;font-size:40px;color:var(--tc);margin-top:14px;letter-spacing:1px}
+.mood{font-size:29px;line-height:1.5;color:var(--og);margin-top:26px;max-width:860px}
+.spacer{flex:1}
+.band{background:var(--ds);color:var(--ws);border-radius:6px;
+  padding:26px 30px;font-size:22px;display:flex;justify-content:space-between;align-items:center}
+.band b{color:var(--tc);font-family:Georgia,serif;font-weight:500}
+.rule{height:1px;background:var(--bw);margin:34px 0 30px}
+.swatches{display:flex;gap:22px}
+.sw{flex:1}
+.chip{height:96px;border-radius:6px}
+.tk{font-size:20px;margin-top:14px;color:var(--nk);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.hx{font-size:17px;color:var(--sg);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;margin-top:3px}
+.foot{font-size:18px;color:var(--sg);margin-top:38px}
+</style></head><body>
+<div class="card">
+  <div class="top">
+    <div class="kicker">design-card · theme</div>
+    <div class="idx">深色主题</div>
+  </div>
+  <div class="name">蓝图<em>.</em></div>
+  <div class="id">blueprint</div>
+  <div class="mood">深海军底 + 电光青 · 技术 · 数据</div>
+  <div class="spacer"></div>
+  <div class="band"><span>--ds 恒深 · --ws 恒浅，深色头部在每套主题都成立</span><b>blueprint</b></div>
+  <div class="rule"></div>
+  <div class="swatches"><div class="sw">
+      <div class="chip" style="background:#0e1a2e;box-shadow:inset 0 0 0 1px var(--bw);"></div>
+      <div class="tk">--pg</div>
+      <div class="hx">#0e1a2e</div>
+    </div><div class="sw">
+      <div class="chip" style="background:#d6e5ff;"></div>
+      <div class="tk">--nk</div>
+      <div class="hx">#d6e5ff</div>
+    </div><div class="sw">
+      <div class="chip" style="background:#4dd2ff;"></div>
+      <div class="tk">--tc</div>
+      <div class="hx">#4dd2ff</div>
+    </div><div class="sw">
+      <div class="chip" style="background:#0a1224;"></div>
+      <div class="tk">--ds</div>
+      <div class="hx">#0a1224</div>
+    </div></div>
+  <div class="foot">同一份模板，只替换 :root token 块 · references/THEMES.md</div>
+</div>
+</body></html>
