@@ -103,6 +103,8 @@ bun scripts/screenshot.ts /tmp/my-card.html
 
 ## 支持格式
 
+<img src="assets/fig-formats.png" alt="design-card 14 种格式 × 4 大格式族总览" width="100%">
+
 ### 格式族 A — 平台封面
 
 「点击前承诺」：一个强判断标题、一句承接、一个证据点，而不是正文摘要。
@@ -169,6 +171,8 @@ bun scripts/screenshot.ts /tmp/my-card.html
 ---
 
 ## 工作流程
+
+<img src="assets/fig-workflow.png" alt="design-card 工作流程 — 提炼、选格式与主题、决定 SVG、生成 HTML、预览、截图" width="100%">
 
 技能被触发后自动完成以下步骤（关键节点会与你确认，不盲目生成）：
 

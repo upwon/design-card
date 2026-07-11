@@ -1,0 +1,36 @@
+<!-- design-card figure · claude theme -->
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><style>
+:root{--pg:#f5f4ed;--iv:#faf9f5;--nk:#141413;--ds:#30302e;--tc:#c96442;--og:#5e5d59;--sg:#87867f;--bc:#f0eee6;--bw:#e8e6dc;--ws:#b0aea5;}
+*{margin:0;box-sizing:border-box}
+.fig{width:1840px;background:var(--pg);color:var(--nk);
+  font-family:-apple-system,system-ui,"PingFang SC",sans-serif;padding:72px 76px}
+.kicker{font-size:19px;letter-spacing:3px;text-transform:uppercase;color:var(--sg)}
+.title{font-family:Georgia,serif;font-weight:500;font-size:56px;letter-spacing:-1px;margin-top:16px}
+.title em{font-style:normal;color:var(--tc)}
+.row{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:64px;position:relative}
+/* connecting hairline behind the number circles */
+.row::before{content:"";position:absolute;top:34px;left:8%;right:8%;height:2px;background:var(--bw)}
+.step{padding:0 20px;position:relative}
+.num{width:68px;height:68px;border-radius:50%;background:var(--tc);color:var(--iv);
+  font-family:Georgia,serif;font-size:32px;display:flex;align-items:center;justify-content:center;
+  position:relative;z-index:1;box-shadow:0 0 0 8px var(--pg)}
+.st{font-family:Georgia,serif;font-weight:500;font-size:28px;margin-top:26px}
+.sd{font-size:19px;line-height:1.5;color:var(--og);margin-top:10px}
+.arrow{position:absolute;top:22px;right:-10px;color:var(--sg);font-size:26px;z-index:2}
+.foot{font-size:18px;color:var(--sg);margin-top:64px}
+.foot b{color:var(--tc);font-family:Georgia,serif;font-weight:500}
+</style></head><body>
+<div class="fig">
+  <div class="kicker">design-card · workflow</div>
+  <div class="title">从内容到卡片，<em>六步</em></div>
+  <div class="row">
+    <div class="step"><div class="num">1</div><div class="st">内容提炼</div><div class="sd">抓取 URL / 读文本，提炼标题·要点·金句·来源，不编造</div></div>
+    <div class="step"><div class="num">2</div><div class="st">选格式 + 主题</div><div class="sd">按内容与平台荐格式，按气质荐主题，与你确认</div></div>
+    <div class="step"><div class="num">3</div><div class="st">决定 SVG</div><div class="sd">能用 CSS 就不用 SVG，逐项判断装饰与数据图</div></div>
+    <div class="step"><div class="num">4</div><div class="st">生成 HTML</div><div class="sd">贴入主题 :root，内联全部样式，完全自包含</div></div>
+    <div class="step"><div class="num">5</div><div class="st">预览确认</div><div class="sd">存到 /tmp，浏览器确认布局后回复「截图」</div></div>
+    <div class="step"><div class="num">6</div><div class="st">截图输出</div><div class="sd">Playwright 渲染 2x PNG → /tmp/design-card-*.png</div></div>
+  </div>
+  <div class="foot">关键节点会与你确认 · 不盲目生成 · 内容<b>忠实原文</b></div>
+</div>
+</body></html>
