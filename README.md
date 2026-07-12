@@ -2,15 +2,15 @@
 
 # design-card
 
-**14 种格式 × 14 套主题配色 — Claude 设计语言驱动的卡片生成技能**
+**14 种格式 × 34 套主题配色 — Claude 设计语言驱动的卡片生成技能**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
-[![Themes](https://img.shields.io/badge/themes-14-c96442.svg)](./samples)
+[![Themes](https://img.shields.io/badge/themes-34-c96442.svg)](./samples)
 [![Formats](https://img.shields.io/badge/formats-14-30302e.svg)](#支持格式)
 [![Bun](https://img.shields.io/badge/Bun-1.x-fbf0df.svg)](https://bun.sh/)
 [![Playwright](https://img.shields.io/badge/Playwright-1.59-45ba4b.svg)](https://playwright.dev/)
 
-<img src="assets/theme-overview.png" alt="design-card 14 套主题总览" width="100%">
+<img src="assets/theme-overview.png" alt="design-card 34 套主题总览" width="100%">
 
 </div>
 
@@ -27,10 +27,12 @@
 输出：/tmp/design-card-*.png（2x Retina，像素精准）
 ```
 
-**内置 14 套主题** —— 8 套原生编辑配色 + 6 套品牌灵感配色（仅借配色、不含商标/字体）：
+**内置 34 套主题** —— 8 套原生编辑配色 + 13 个品牌灵感配色 × 明暗双模（仅借配色、不含商标/字体）：
 
-- 原生：`claude`（陶土·默认）· `newsroom`（报刊红）· `indigo`（靛蓝）· `forest`（森林墨）· `kraft`（牛皮纸）· `dune`（沙丘）· `midnight`（深·橙）· `blueprint`（深·蓝图）
-- 品牌灵感：`figma`（洋红）· `apple`（冷灰蓝）· `notion`（暖白靛紫）· `vercel`（深·蓝）· `linear`（深·靛紫）· `spotify`（深·霓绿）
+- **原生（8）**：`claude`（陶土·默认）· `newsroom` · `indigo` · `forest` · `kraft` · `dune` · `midnight`★ · `blueprint`★
+- **品牌灵感（13 × 明暗）**：`figma` · `apple` · `notion` · `vercel` · `linear` · `spotify` · `airbnb` · `stripe` · `cursor` · `coinbase` · `calcom` · `airtable` · `minimax` —— 每个都有浅色 + 深色两版（如 `apple` / `apple-dark`）
+
+> 完整清单见 [`references/THEMES.md`](references/THEMES.md)，全部预览见 [主题画廊](samples/)。（★ = 深色）
 
 👉 **[主题预览画廊 →](samples/)**（每套主题一张大图样例卡 + 调色板 hex，方便挑选）
 
@@ -38,10 +40,10 @@
 
 ## 核心特性
 
-<img src="assets/fig-features.png" alt="design-card 核心特性 — 14 格式 4 族、14 套主题、印刷级 SVG、内容忠实、完全自包含、自然语言触发" width="100%">
+<img src="assets/fig-features.png" alt="design-card 核心特性 — 14 格式 4 族、34 套主题、印刷级 SVG、内容忠实、完全自包含、自然语言触发" width="100%">
 
 - **14 种格式，4 大格式族** — 平台封面、图文内容卡、社交分享卡、长文编辑排版，每种格式有专属排版结构，不是「换尺寸」。
-- **14 套可选主题** — token 化配色，`:root` 一段切换；`--ds` 恒深 + `--ws` 恒浅，深色头部构图在浅色 / 深色主题下都成立。可只覆盖 `--tc` 接入品牌色。
+- **34 套可选主题** — token 化配色，`:root` 一段切换；`--ds` 恒深 + `--ws` 恒浅，深色头部构图在浅色 / 深色主题下都成立。可只覆盖 `--tc` 接入品牌色。
 - **印刷级 SVG 系统** — 版刻装饰线、大号引言符、编辑插图、数据可视化、图案底纹五类，仅在 CSS 做不到时才用，全部走主题 token。
 - **内容忠实** — 只提炼原文里的判断、数字、金句，不为排版好看而编造。
 - **完全自包含** — 生成的 HTML 内联全部样式，无外部 CDN 依赖，可离线打开 / 截图。
@@ -152,7 +154,7 @@ bun scripts/screenshot.ts /tmp/my-card.html
 
 ## 主题系统
 
-所有卡片颜色抽象成 **10 个语义 Token**，取值来自选中的**主题**。换主题只替换 `:root` 一段，正文样式零改动。完整定义见 [`references/THEMES.md`](references/THEMES.md)，14 套主题预览见 [samples/](samples/)。
+所有卡片颜色抽象成 **10 个语义 Token**，取值来自选中的**主题**。换主题只替换 `:root` 一段，正文样式零改动。完整定义见 [`references/THEMES.md`](references/THEMES.md)，34 套主题预览见 [samples/](samples/)。
 
 下表为默认主题 `claude` 的取值：
 
@@ -218,4 +220,4 @@ bun scripts/screenshot.ts /tmp/my-card.html
 | 公众号 | 微信搜「热夏summer」 |
 | 原项目 | [geekjourneyx/claude-design-card](https://github.com/geekjourneyx/claude-design-card) |
 
-本仓库 fork 自 **geekjourneyx** 的 [claude-design-card](https://github.com/geekjourneyx/claude-design-card)，在其排版系统之上新增了 14 套主题配色。感谢原作者奠定的设计基础。
+本仓库 fork 自 **geekjourneyx** 的 [claude-design-card](https://github.com/geekjourneyx/claude-design-card)，在其排版系统之上新增了 34 套主题配色（含品牌灵感明暗双模）。感谢原作者奠定的设计基础。

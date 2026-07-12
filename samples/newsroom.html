@@ -8,51 +8,30 @@
 .top{display:flex;justify-content:space-between;align-items:baseline}
 .kicker{font-size:19px;letter-spacing:3px;text-transform:uppercase;color:var(--sg)}
 .idx{font-size:19px;letter-spacing:2px;color:var(--sg);font-variant-numeric:tabular-nums}
-.name{font-family:Georgia,"Times New Roman",serif;font-weight:500;
-  font-size:150px;line-height:1.0;letter-spacing:-2px;margin-top:40px}
+.name{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:150px;line-height:1.0;letter-spacing:-2px;margin-top:40px}
 .name em{font-style:normal;color:var(--tc)}
-.id{font-family:Georgia,serif;font-size:40px;color:var(--tc);margin-top:14px;letter-spacing:1px}
-.mood{font-size:29px;line-height:1.5;color:var(--og);margin-top:26px;max-width:860px}
+.id{font-family:ui-monospace,Menlo,monospace;font-size:38px;color:var(--tc);margin-top:16px;letter-spacing:1px}
+.mood{font-size:27px;line-height:1.5;color:var(--og);margin-top:26px;max-width:880px}
 .spacer{flex:1}
-.band{background:var(--ds);color:var(--ws);border-radius:6px;
-  padding:26px 30px;font-size:22px;display:flex;justify-content:space-between;align-items:center}
-.band b{color:var(--tc);font-family:Georgia,serif;font-weight:500}
+.band{background:var(--ds);color:var(--ws);border-radius:6px;padding:26px 30px;font-size:22px;display:flex;justify-content:space-between;align-items:center}
+.band b{color:var(--tc);font-family:ui-monospace,Menlo,monospace;font-weight:500}
 .rule{height:1px;background:var(--bw);margin:34px 0 30px}
 .swatches{display:flex;gap:22px}
 .sw{flex:1}
 .chip{height:96px;border-radius:6px}
-.tk{font-size:20px;margin-top:14px;color:var(--nk);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-.hx{font-size:17px;color:var(--sg);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;margin-top:3px}
+.tk{font-size:20px;margin-top:14px;color:var(--nk);font-family:ui-monospace,Menlo,monospace}
+.hx{font-size:17px;color:var(--sg);font-family:ui-monospace,Menlo,monospace;margin-top:3px}
 .foot{font-size:18px;color:var(--sg);margin-top:38px}
 </style></head><body>
 <div class="card">
-  <div class="top">
-    <div class="kicker">design-card · theme</div>
-    <div class="idx">浅色主题</div>
-  </div>
+  <div class="top"><div class="kicker">design-card · theme</div><div class="idx">浅色主题</div></div>
   <div class="name">报刊<em>.</em></div>
   <div class="id">newsroom</div>
   <div class="mood">报纸奶油 + 旗红 · 新闻 · 评论</div>
   <div class="spacer"></div>
   <div class="band"><span>--ds 恒深 · --ws 恒浅，深色头部在每套主题都成立</span><b>newsroom</b></div>
   <div class="rule"></div>
-  <div class="swatches"><div class="sw">
-      <div class="chip" style="background:#f1ebd8;box-shadow:inset 0 0 0 1px var(--bw);"></div>
-      <div class="tk">--pg</div>
-      <div class="hx">#f1ebd8</div>
-    </div><div class="sw">
-      <div class="chip" style="background:#14110b;"></div>
-      <div class="tk">--nk</div>
-      <div class="hx">#14110b</div>
-    </div><div class="sw">
-      <div class="chip" style="background:#c8260d;"></div>
-      <div class="tk">--tc</div>
-      <div class="hx">#c8260d</div>
-    </div><div class="sw">
-      <div class="chip" style="background:#201a10;"></div>
-      <div class="tk">--ds</div>
-      <div class="hx">#201a10</div>
-    </div></div>
+  <div class="swatches"><div class="sw"><div class="chip" style="background:#f1ebd8;box-shadow:inset 0 0 0 1px var(--bw);"></div><div class="tk">--pg</div><div class="hx">#f1ebd8</div></div><div class="sw"><div class="chip" style="background:#14110b;"></div><div class="tk">--nk</div><div class="hx">#14110b</div></div><div class="sw"><div class="chip" style="background:#c8260d;"></div><div class="tk">--tc</div><div class="hx">#c8260d</div></div><div class="sw"><div class="chip" style="background:#201a10;"></div><div class="tk">--ds</div><div class="hx">#201a10</div></div></div>
   <div class="foot">同一份模板，只替换 :root token 块 · references/THEMES.md</div>
 </div>
 </body></html>
