@@ -20,3 +20,6 @@ node_modules/
 
 # Commercial fonts (download separately)
 assets/TsangerJinKai02*.ttf
+
+# 本地临时预览（不入库）
+_preview/
