@@ -106,6 +106,10 @@ const THEMES: Theme[] = [
     root: '--pg:#fafafa;--iv:#ffffff;--nk:#0a0a0a;--ds:#0a0a0a;--tc:#ff5530;--og:#5e5e5e;--sg:#949494;--bc:#f0f0f0;--bw:#e8e8e8;--ws:#fafafa;' },
   { id: 'minimax', nameZh: '珊黑', mood: '纯黑 + 珊瑚 · AI · 传播（灵感 MiniMax · 深）', dark: true, group: 'brand',
     root: '--pg:#0a0a0a;--iv:#181e25;--nk:#ffffff;--ds:#1c2029;--tc:#ff5530;--og:#a0a3a8;--sg:#6a6d72;--bc:#22262d;--bw:#2e333b;--ws:#e8e8ea;' },
+  { id: 'google', nameZh: '谷蓝', mood: '净白 + 谷歌蓝 · 搜索 · 大众（灵感 Google · 浅）', dark: false, group: 'brand',
+    root: '--pg:#f8f9fa;--iv:#ffffff;--nk:#202124;--ds:#202124;--tc:#4285f4;--og:#5f6368;--sg:#9aa0a6;--bc:#f1f3f4;--bw:#e8eaed;--ws:#f8f9fa;' },
+  { id: 'google-dark', nameZh: '谷夜', mood: '石墨底 + 亮谷蓝 · 搜索 · 大众（灵感 Google · 深）', dark: true, group: 'brand',
+    root: '--pg:#202124;--iv:#292a2d;--nk:#e8eaed;--ds:#171717;--tc:#8ab4f8;--og:#bdc1c6;--sg:#80868b;--bc:#303134;--bw:#3c4043;--ws:#e8eaed;' },
 ];
 
 // ── 从 root 解析某个 token 的 hex ──
