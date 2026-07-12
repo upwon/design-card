@@ -2,7 +2,7 @@
 name: design-card
 description: |
   将任意文本、网页或 URL 生成符合 Claude/Anthropic 设计语言的 HTML 信息卡片，通过 Playwright 截图为 PNG。
-  内置 36 套可选主题配色（8 套原生 + 14 个品牌灵感 × 明暗双模）——用同一套排版结构换主题色，不再只有一个陶土色。
+  内置 37 套可选主题配色（8 套原生 + 14 个品牌灵感 × 明暗双模）——用同一套排版结构换主题色，不再只有一个陶土色。
   支持 14 种格式：平台封面（公众号、视频号、B站、抖音）、图文内容卡（小红书、教程、对比分析）、
   社交分享卡（金句、数据、方形）、长文编辑排版（Broadsheet、Feature、Reader、Digest）。
   当用户提到「信息卡、卡片、封面、图文笔记、排版、截图、生成图、内容卡、换主题色、配色」时使用本技能。
@@ -13,13 +13,13 @@ description: |
 将内容转成符合 Claude/Anthropic 设计语言的 HTML 卡片，并通过 Playwright 截图为 PNG。
 核心目标：用统一的设计系统让每种格式都有专属的排版气质，而不是换色皮肤。
 
-**相较 claude-design-card 的升级**：颜色抽象成 10 个语义 token，可在 **36 套内置主题**（8 原生 + 14 品牌×明暗）间切换
+**相较 claude-design-card 的升级**：颜色抽象成 10 个语义 token，可在 **37 套内置主题**（8 原生 + 14 品牌×明暗）间切换
 （详见 [`references/THEMES.md`](references/THEMES.md)）。排版结构、字体纪律、SVG 系统全部不变，只有配色随主题流动。
 
 ## 设计语言与主题 Token
 
 所有卡片**只使用**下列 10 个语义 token，**绝不写死 hex**；token 的**值来自选中的主题**。
-下表为默认主题 `claude` 的取值；全部 36 套的 `:root` 值见 [`references/THEMES.tokens.md`](references/THEMES.tokens.md)（自动生成），主题清单见 [`references/THEMES.md`](references/THEMES.md)。
+下表为默认主题 `claude` 的取值；全部 37 套的 `:root` 值见 [`references/THEMES.tokens.md`](references/THEMES.tokens.md)（自动生成），主题清单见 [`references/THEMES.md`](references/THEMES.md)。
 
 ### 颜色 Token（语义恒定，取值随主题）
 
@@ -38,6 +38,7 @@ description: |
 
 > **主题机制**：生成 HTML 时，把选中主题的 `:root {}` token 块整段贴进 `<style>`（值见 THEMES.tokens.md，自动生成），
 > 其余样式一律 `var(--x)`。`--ds` 恒深 + `--ws` 恒浅，保证深色头部构图在每套主题下都成立。
+> **唯一特例 `google-multi`**：额外含 `--g-blue/--g-red/--g-yellow/--g-green` 四色，装饰位（标题字/圆点/分节线/标签）四色轮转，底墨仍走 Google 净白系。
 
 ### 字体规则
 

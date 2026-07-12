@@ -29,6 +29,7 @@ type Theme = {
   dark: boolean;
   group: Group;
   root: string;      // :root {} 内容（不含大括号）
+  four?: boolean;    // 四色特例（google-multi）：走 cardMulti 模板，root 额外含 --g-blue/red/yellow/green
 };
 
 // ── 主题定义（唯一真相源）─────────────────────────────────────────
@@ -110,6 +111,10 @@ const THEMES: Theme[] = [
     root: '--pg:#f8f9fa;--iv:#ffffff;--nk:#202124;--ds:#202124;--tc:#4285f4;--og:#5f6368;--sg:#9aa0a6;--bc:#f1f3f4;--bw:#e8eaed;--ws:#f8f9fa;' },
   { id: 'google-dark', nameZh: '谷夜', mood: '石墨底 + 亮谷蓝 · 搜索 · 大众（灵感 Google · 深）', dark: true, group: 'brand',
     root: '--pg:#202124;--iv:#292a2d;--nk:#e8eaed;--ds:#171717;--tc:#8ab4f8;--og:#bdc1c6;--sg:#80868b;--bc:#303134;--bw:#3c4043;--ws:#e8eaed;' },
+
+  // ── 四色特例（1）：突破单强调色，蓝红黄绿轮转 ──
+  { id: 'google-multi', nameZh: '谷彩', mood: '净白 + 蓝红黄绿四色轮转 · 大众 · 活泼（灵感 Google · 四色特例）', dark: false, group: 'brand', four: true,
+    root: '--pg:#ffffff;--iv:#f8f9fa;--nk:#202124;--ds:#202124;--ws:#f8f9fa;--og:#5f6368;--sg:#9aa0a6;--bc:#f1f3f4;--bw:#e8eaed;--g-blue:#4285f4;--g-red:#ea4335;--g-yellow:#fbbc05;--g-green:#34a853;--tc:var(--g-blue);' },
 ];
 
 // ── 从 root 解析某个 token 的 hex ──
@@ -118,6 +123,62 @@ function hexOf(root: string, token: string): string {
   return m ? m[1] : '';
 }
 const SWATCH_TOKENS = ['--pg', '--nk', '--tc', '--ds'] as const;
+
+// ── 1b) 四色特例卡（google-multi）──
+function cardMulti(t: Theme): string {
+  return `<!-- theme: ${t.id} -->
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><style>
+:root{${t.root}}
+*{margin:0;box-sizing:border-box}
+.card{width:1080px;height:1080px;background:var(--pg);color:var(--nk);
+  font-family:-apple-system,system-ui,"PingFang SC","Microsoft YaHei",sans-serif;
+  padding:88px 84px;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;align-items:baseline}
+.kicker{font-size:19px;letter-spacing:3px;text-transform:uppercase;color:var(--sg)}
+.idx{font-size:19px;letter-spacing:2px;color:var(--sg)}
+.name{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:150px;line-height:1.0;letter-spacing:-2px;margin-top:36px}
+.name .a{color:var(--g-blue)} .name .d{color:var(--g-green)} .name em{font-style:normal;color:var(--g-blue)}
+.id{font-family:ui-monospace,Menlo,monospace;font-size:38px;color:var(--og);margin-top:16px;letter-spacing:1px}
+.dots{display:flex;gap:16px;margin-top:30px}
+.dot{width:34px;height:34px;border-radius:50%}
+.mood{font-size:27px;line-height:1.5;color:var(--og);margin-top:30px;max-width:880px}
+.spacer{flex:1}
+.multiline{display:flex;height:6px;border-radius:3px;overflow:hidden;margin:0 0 30px}
+.multiline i{flex:1}
+.band{background:var(--ds);border-radius:8px;padding:26px 30px;font-size:22px;color:var(--ws);display:flex;justify-content:space-between;align-items:center}
+.band .g{font-family:ui-monospace,Menlo,monospace;font-weight:600;letter-spacing:.5px}
+.band .g span:nth-child(1){color:var(--g-blue)} .band .g span:nth-child(2){color:var(--g-red)}
+.band .g span:nth-child(3){color:var(--g-yellow)} .band .g span:nth-child(4){color:var(--g-blue)}
+.band .g span:nth-child(5){color:var(--g-green)} .band .g span:nth-child(6){color:var(--g-red)}
+.swatches{display:flex;gap:22px;margin-top:30px}
+.sw{flex:1}
+.chip{height:96px;border-radius:8px}
+.tk{font-size:19px;margin-top:14px;font-family:ui-monospace,Menlo,monospace}
+.hx{font-size:16px;color:var(--sg);font-family:ui-monospace,Menlo,monospace;margin-top:3px}
+.foot{font-size:18px;color:var(--sg);margin-top:34px}
+</style></head><body>
+<div class="card">
+  <div class="top"><div class="kicker">design-card · theme</div><div class="idx">浅色 · 四色特例</div></div>
+  <div class="name"><span class="a">谷</span><span class="d">彩</span><em>.</em></div>
+  <div class="id">${t.id}</div>
+  <div class="dots">
+    <div class="dot" style="background:var(--g-blue)"></div><div class="dot" style="background:var(--g-red)"></div>
+    <div class="dot" style="background:var(--g-yellow)"></div><div class="dot" style="background:var(--g-green)"></div>
+  </div>
+  <div class="mood">突破单强调色：蓝红黄绿四色轮转，用在标题字、圆点、分节线与标签，底/墨仍是 Google 净白系。</div>
+  <div class="spacer"></div>
+  <div class="multiline"><i style="background:var(--g-blue)"></i><i style="background:var(--g-red)"></i><i style="background:var(--g-yellow)"></i><i style="background:var(--g-green)"></i></div>
+  <div class="band"><span>四色轮转 · 底墨不变 · 深块仍 --ds + --ws 浅字</span><span class="g"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span></div>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:var(--g-blue)"></div><div class="tk">blue</div><div class="hx">#4285f4</div></div>
+    <div class="sw"><div class="chip" style="background:var(--g-red)"></div><div class="tk">red</div><div class="hx">#ea4335</div></div>
+    <div class="sw"><div class="chip" style="background:var(--g-yellow)"></div><div class="tk">yellow</div><div class="hx">#fbbc05</div></div>
+    <div class="sw"><div class="chip" style="background:var(--g-green)"></div><div class="tk">green</div><div class="hx">#34a853</div></div>
+  </div>
+  <div class="foot">四色特例 · 底/墨走 Google 净白系 · references/THEMES.md</div>
+</div>
+</body></html>`;
+}
 
 // ── 1) 单张主题预览卡 ──
 function card(t: Theme): string {
@@ -246,7 +307,7 @@ ${brand}`;
 }
 
 // ── 生成 ──
-for (const t of THEMES) writeFileSync(join(SAMPLES_DIR, `${t.id}.html`), card(t));
+for (const t of THEMES) writeFileSync(join(SAMPLES_DIR, `${t.id}.html`), t.four ? cardMulti(t) : card(t));
 writeFileSync(join(SAMPLES_DIR, '_montage.html'), montage());
 writeFileSync(join(SAMPLES_DIR, 'index.html'), indexPage());
 writeFileSync(join(REPO, 'references', 'THEMES.tokens.md'), tokensMd());
